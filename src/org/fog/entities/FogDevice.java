@@ -693,6 +693,9 @@ public class FogDevice extends PowerDatacenter {
                 else if (tuple.getDirection() == Tuple.DOWN) {
                     for (int childId : getChildrenIds())
                         sendDown(tuple, childId);
+
+                    for (Integer neibourId : getNeighboursLatencyMap().keySet())
+                        sendDown(tuple, neibourId);
                 }
             } else {
                 sendUp(tuple);
@@ -703,6 +706,9 @@ public class FogDevice extends PowerDatacenter {
             else if (tuple.getDirection() == Tuple.DOWN) {
                 for (int childId : getChildrenIds())
                     sendDown(tuple, childId);
+
+                for (Integer neibourId : getNeighboursLatencyMap().keySet())
+                    sendDown(tuple, neibourId);
             }
         }
     }
@@ -848,26 +854,30 @@ public class FogDevice extends PowerDatacenter {
     }
 
     protected void sendDownFreeLink(Tuple tuple, int childId) {
-        double networkDelay = tuple.getCloudletFileSize() / getDownlinkBandwidth();
+        double networkDelay = 0, latency = 0;
+
+        if (getChildrenIds().contains(childId)) {
+            networkDelay = tuple.getCloudletFileSize() / getDownlinkBandwidth();
+            latency = getChildToLatencyMap().get(childId);
+        } else {
+            networkDelay = tuple.getCloudletFileSize() / 10000;
+            latency = getNeighboursLatencyMap().get(childId);
+        }
+
         //Logger.debug(getName(), "Sending tuple with tupleType = "+tuple.getTupleType()+" DOWN");
         setSouthLinkBusy(true);
-        double latency = getChildToLatencyMap().get(childId);
         send(getId(), networkDelay, FogEvents.UPDATE_SOUTH_TUPLE_QUEUE);
         send(childId, networkDelay + latency, FogEvents.TUPLE_ARRIVAL, tuple);
         NetworkUsageMonitor.sendingTuple(latency, tuple.getCloudletFileSize());
     }
 
     protected void sendDown(Tuple tuple, int childId) {
-        if (getNeighboursLatencyMap().size() > 0) {
-            if (getChildrenIds().contains(childId)) {
-                if (!isSouthLinkBusy()) {
-                    sendDownFreeLink(tuple, childId);
-                } else {
-                    southTupleQueue.add(new Pair<Tuple, Integer>(tuple, childId));
-                }
+        if (getChildrenIds().contains(childId) || getNeighboursLatencyMap().containsKey(childId)) {
+            if (!isSouthLinkBusy()) {
+                sendDownFreeLink(tuple, childId);
+            } else {
+                southTupleQueue.add(new Pair<Tuple, Integer>(tuple, childId));
             }
-        } else {
-            
         }
     }
 
