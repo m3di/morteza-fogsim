@@ -4,57 +4,7 @@
       "level": 3,
       "upBw": 100,
       "ratePerMips": 0.0,
-      "name": "device-1",
-      "type": "FOG_DEVICE",
-      "mips": 4000,
-      "ram": 2048,
-      "downBw": 250
-    },
-    {
-      "level": 3,
-      "upBw": 100,
-      "ratePerMips": 0.0,
-      "name": "device-2",
-      "type": "FOG_DEVICE",
-      "mips": 4000,
-      "ram": 2048,
-      "downBw": 250
-    },
-    {
-      "level": 3,
-      "upBw": 100,
-      "ratePerMips": 0.0,
-      "name": "device-3",
-      "type": "FOG_DEVICE",
-      "mips": 4000,
-      "ram": 2048,
-      "downBw": 250
-    },
-    {
-      "level": 3,
-      "upBw": 100,
-      "ratePerMips": 0.0,
-      "name": "device-4",
-      "type": "FOG_DEVICE",
-      "mips": 4000,
-      "ram": 2048,
-      "downBw": 250
-    },
-    {
-      "level": 3,
-      "upBw": 100,
-      "ratePerMips": 0.0,
-      "name": "device-5",
-      "type": "FOG_DEVICE",
-      "mips": 4000,
-      "ram": 2048,
-      "downBw": 250
-    },
-    {
-      "level": 3,
-      "upBw": 100,
-      "ratePerMips": 0.0,
-      "name": "device-6",
+      "name": "device-8",
       "type": "FOG_DEVICE",
       "mips": 4000,
       "ram": 2048,
@@ -71,14 +21,14 @@
       "downBw": 250
     },
     {
-      "level": 3,
-      "upBw": 100,
+      "level": 2,
+      "upBw": 10000,
       "ratePerMips": 0.0,
-      "name": "device-8",
+      "name": "fog-2",
       "type": "FOG_DEVICE",
-      "mips": 4000,
-      "ram": 2048,
-      "downBw": 250
+      "mips": 10000,
+      "ram": 8192,
+      "downBw": 10000
     },
     {
       "level": 2,
@@ -86,28 +36,8 @@
       "ratePerMips": 0.0,
       "name": "fog-1",
       "type": "FOG_DEVICE",
-      "mips": 8000,
-      "ram": 6144,
-      "downBw": 10000
-    },
-    {
-      "level": 2,
-      "upBw": 10000,
-      "ratePerMips": 0.0,
-      "name": "fog-2",
-      "type": "FOG_DEVICE",
-      "mips": 8000,
-      "ram": 6144,
-      "downBw": 10000
-    },
-    {
-      "level": 2,
-      "upBw": 10000,
-      "ratePerMips": 0.0,
-      "name": "fog-3",
-      "type": "FOG_DEVICE",
-      "mips": 8000,
-      "ram": 6144,
+      "mips": 10000,
+      "ram": 8192,
       "downBw": 10000
     },
     {
@@ -116,28 +46,28 @@
       "ratePerMips": 0.0,
       "name": "fog-4",
       "type": "FOG_DEVICE",
-      "mips": 8000,
-      "ram": 6144,
+      "mips": 10000,
+      "ram": 8192,
+      "downBw": 10000
+    },
+    {
+      "level": 2,
+      "upBw": 10000,
+      "ratePerMips": 0.0,
+      "name": "fog-3",
+      "type": "FOG_DEVICE",
+      "mips": 10000,
+      "ram": 8192,
       "downBw": 10000
     },
     {
       "level": 0,
-      "upBw": 10000,
+      "upBw": 1000,
       "ratePerMips": 10.0,
       "name": "cloud",
       "type": "FOG_DEVICE",
       "mips": 40000,
       "ram": 40960,
-      "downBw": 10000
-    },
-    {
-      "level": 1,
-      "upBw": 10000,
-      "ratePerMips": 0.0,
-      "name": "gateway",
-      "type": "FOG_DEVICE",
-      "mips": 10000,
-      "ram": 81192,
       "downBw": 10000
     },
     {
@@ -147,6 +77,16 @@
       "type": "SENSOR",
       "distribution": 1,
       "stdDev": 2.0
+    },
+    {
+      "level": 3,
+      "upBw": 100,
+      "ratePerMips": 0.0,
+      "name": "device-5",
+      "type": "FOG_DEVICE",
+      "mips": 4000,
+      "ram": 2048,
+      "downBw": 250
     },
     {
       "name": "Actuator5",
@@ -183,13 +123,71 @@
       "type": "ACTUATOR",
       "actuatorType": "MOTOR"
     },
-
+    {
+      "level": 3,
+      "upBw": 100,
+      "ratePerMips": 0.0,
+      "name": "device-2",
+      "type": "FOG_DEVICE",
+      "mips": 4000,
+      "ram": 2048,
+      "downBw": 250
+    },
+    {
+      "level": 3,
+      "upBw": 100,
+      "ratePerMips": 0.0,
+      "name": "device-1",
+      "type": "FOG_DEVICE",
+      "mips": 4000,
+      "ram": 2048,
+      "downBw": 250
+    },
     {
       "name": "Actuator1",
       "type": "ACTUATOR",
       "actuatorType": "MOTOR"
     },
-
+    {
+      "level": 3,
+      "upBw": 100,
+      "ratePerMips": 0.0,
+      "name": "device-4",
+      "type": "FOG_DEVICE",
+      "mips": 4000,
+      "ram": 2048,
+      "downBw": 250
+    },
+    {
+      "level": 3,
+      "upBw": 100,
+      "ratePerMips": 0.0,
+      "name": "device-3",
+      "type": "FOG_DEVICE",
+      "mips": 4000,
+      "ram": 2048,
+      "downBw": 250
+    },
+    {
+      "level": 3,
+      "upBw": 100,
+      "ratePerMips": 0.0,
+      "name": "device-6",
+      "type": "FOG_DEVICE",
+      "mips": 4000,
+      "ram": 2048,
+      "downBw": 250
+    },
+    {
+      "level": 1,
+      "upBw": 10000,
+      "ratePerMips": 0.0,
+      "name": "gateway",
+      "type": "FOG_DEVICE",
+      "mips": 10000,
+      "ram": 512,
+      "downBw": 10000
+    },
     {
       "mean": 10.0,
       "sensorType": "TEMP",

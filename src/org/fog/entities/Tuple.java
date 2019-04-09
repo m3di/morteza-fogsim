@@ -1,12 +1,16 @@
 package org.fog.entities;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 
 import org.cloudbus.cloudsim.Cloudlet;
 import org.cloudbus.cloudsim.UtilizationModel;
 
 public class Tuple extends Cloudlet{
+
+	protected HashSet<Integer> neighboursPassed;
+	protected Integer partyEntryDevice = null;
 
 	public static final int UP = 1;
 	public static final int DOWN = 2;
@@ -41,6 +45,7 @@ public class Tuple extends Cloudlet{
 		setDirection(direction);
 		setSourceDeviceId(-1);
 		setModuleCopyMap(new HashMap<String, Integer>());
+		setNeighboursPassed(new HashSet<>());
 	}
 
 	public int getActualTupleId() {
@@ -123,4 +128,19 @@ public class Tuple extends Cloudlet{
 		this.sourceModuleId = sourceModuleId;
 	}
 
+	public HashSet<Integer> getNeighboursPassed() {
+		return neighboursPassed;
+	}
+
+	public void setNeighboursPassed(HashSet<Integer> neighboursPassed) {
+		this.neighboursPassed = neighboursPassed;
+	}
+
+	public Integer getPartyEntryDevice() {
+		return partyEntryDevice;
+	}
+
+	public void setPartyEntryDevice(Integer partyEntryDevice) {
+		this.partyEntryDevice = partyEntryDevice;
+	}
 }

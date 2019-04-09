@@ -4,7 +4,7 @@
       "level": 3,
       "upBw": 100,
       "ratePerMips": 0.0,
-      "name": "device-1",
+      "name": "device-8",
       "type": "FOG_DEVICE",
       "mips": 4000,
       "ram": 2048,
@@ -14,7 +14,145 @@
       "level": 3,
       "upBw": 100,
       "ratePerMips": 0.0,
+      "name": "device-7",
+      "type": "FOG_DEVICE",
+      "mips": 4000,
+      "ram": 2048,
+      "downBw": 250
+    },
+    {
+      "level": 2,
+      "upBw": 10000,
+      "ratePerMips": 0.0,
+      "name": "fog-2",
+      "type": "FOG_DEVICE",
+      "mips": 10000,
+      "ram": 8192,
+      "downBw": 10000
+    },
+    {
+      "level": 2,
+      "upBw": 10000,
+      "ratePerMips": 0.0,
+      "name": "fog-1",
+      "type": "FOG_DEVICE",
+      "mips": 10000,
+      "ram": 8192,
+      "downBw": 10000
+    },
+    {
+      "level": 2,
+      "upBw": 10000,
+      "ratePerMips": 0.0,
+      "name": "fog-4",
+      "type": "FOG_DEVICE",
+      "mips": 10000,
+      "ram": 8192,
+      "downBw": 10000
+    },
+    {
+      "level": 2,
+      "upBw": 10000,
+      "ratePerMips": 0.0,
+      "name": "fog-3",
+      "type": "FOG_DEVICE",
+      "mips": 10000,
+      "ram": 8192,
+      "downBw": 10000
+    },
+    {
+      "level": 0,
+      "upBw": 1000,
+      "ratePerMips": 10.0,
+      "name": "cloud",
+      "type": "FOG_DEVICE",
+      "mips": 40000,
+      "ram": 40960,
+      "downBw": 10000
+    },
+    {
+      "mean": 10.0,
+      "sensorType": "TEMP",
+      "name": "sensor-2",
+      "type": "SENSOR",
+      "distribution": 1,
+      "stdDev": 2.0
+    },
+    {
+      "level": 3,
+      "upBw": 100,
+      "ratePerMips": 0.0,
+      "name": "device-5",
+      "type": "FOG_DEVICE",
+      "mips": 4000,
+      "ram": 2048,
+      "downBw": 250
+    },
+    {
+      "name": "Actuator5",
+      "type": "ACTUATOR",
+      "actuatorType": "SELF_STATE_UPDATE"
+    },
+    {
+      "name": "Actuator4",
+      "type": "ACTUATOR",
+      "actuatorType": "SELF_STATE_UPDATE"
+    },
+    {
+      "name": "Actuator3",
+      "type": "ACTUATOR",
+      "actuatorType": "SELF_STATE_UPDATE"
+    },
+    {
+      "name": "Actuator2",
+      "type": "ACTUATOR",
+      "actuatorType": "SELF_STATE_UPDATE"
+    },
+    {
+      "name": "Actuator8",
+      "type": "ACTUATOR",
+      "actuatorType": "SELF_STATE_UPDATE"
+    },
+    {
+      "name": "Actuator7",
+      "type": "ACTUATOR",
+      "actuatorType": "SELF_STATE_UPDATE"
+    },
+    {
+      "name": "Actuator6",
+      "type": "ACTUATOR",
+      "actuatorType": "SELF_STATE_UPDATE"
+    },
+    {
+      "level": 3,
+      "upBw": 100,
+      "ratePerMips": 0.0,
       "name": "device-2",
+      "type": "FOG_DEVICE",
+      "mips": 4000,
+      "ram": 2048,
+      "downBw": 250
+    },
+    {
+      "level": 3,
+      "upBw": 100,
+      "ratePerMips": 0.0,
+      "name": "device-1",
+      "type": "FOG_DEVICE",
+      "mips": 4000,
+      "ram": 2048,
+      "downBw": 250
+    },
+    {
+      "name": "Actuator1",
+      "type": "ACTUATOR",
+      "actuatorType": "SELF_STATE_UPDATE"
+    },
+    {
+      "level": 3,
+      "upBw": 100,
+      "ratePerMips": 0.0,
+      "name": "device-4",
       "type": "FOG_DEVICE",
       "mips": 4000,
       "ram": 2048,
@@ -34,101 +172,11 @@
       "level": 3,
       "upBw": 100,
       "ratePerMips": 0.0,
-      "name": "device-4",
-      "type": "FOG_DEVICE",
-      "mips": 4000,
-      "ram": 2048,
-      "downBw": 250
-    },
-    {
-      "level": 3,
-      "upBw": 100,
-      "ratePerMips": 0.0,
-      "name": "device-5",
-      "type": "FOG_DEVICE",
-      "mips": 4000,
-      "ram": 2048,
-      "downBw": 250
-    },
-    {
-      "level": 3,
-      "upBw": 100,
-      "ratePerMips": 0.0,
       "name": "device-6",
       "type": "FOG_DEVICE",
       "mips": 4000,
       "ram": 2048,
       "downBw": 250
-    },
-    {
-      "level": 3,
-      "upBw": 100,
-      "ratePerMips": 0.0,
-      "name": "device-7",
-      "type": "FOG_DEVICE",
-      "mips": 4000,
-      "ram": 2048,
-      "downBw": 250
-    },
-    {
-      "level": 3,
-      "upBw": 100,
-      "ratePerMips": 0.0,
-      "name": "device-8",
-      "type": "FOG_DEVICE",
-      "mips": 4000,
-      "ram": 2048,
-      "downBw": 250
-    },
-    {
-      "level": 2,
-      "upBw": 10000,
-      "ratePerMips": 0.0,
-      "name": "fog-1",
-      "type": "FOG_DEVICE",
-      "mips": 8000,
-      "ram": 6144,
-      "downBw": 10000
-    },
-    {
-      "level": 2,
-      "upBw": 10000,
-      "ratePerMips": 0.0,
-      "name": "fog-2",
-      "type": "FOG_DEVICE",
-      "mips": 8000,
-      "ram": 6144,
-      "downBw": 10000
-    },
-    {
-      "level": 2,
-      "upBw": 10000,
-      "ratePerMips": 0.0,
-      "name": "fog-3",
-      "type": "FOG_DEVICE",
-      "mips": 8000,
-      "ram": 6144,
-      "downBw": 10000
-    },
-    {
-      "level": 2,
-      "upBw": 10000,
-      "ratePerMips": 0.0,
-      "name": "fog-4",
-      "type": "FOG_DEVICE",
-      "mips": 8000,
-      "ram": 6144,
-      "downBw": 10000
-    },
-    {
-      "level": 0,
-      "upBw": 10000,
-      "ratePerMips": 10.0,
-      "name": "cloud",
-      "type": "FOG_DEVICE",
-      "mips": 40000,
-      "ram": 40960,
-      "downBw": 10000
     },
     {
       "level": 1,
@@ -137,62 +185,12 @@
       "name": "gateway",
       "type": "FOG_DEVICE",
       "mips": 10000,
-      "ram": 81192,
+      "ram": 512,
       "downBw": 10000
     },
     {
       "mean": 10.0,
-      "sensorType": "TEMP",
-      "name": "sensor-2",
-      "type": "SENSOR",
-      "distribution": 1,
-      "stdDev": 2.0
-    },
-    {
-      "name": "Actuator5",
-      "type": "ACTUATOR",
-      "actuatorType": "MOTOR"
-    },
-    {
-      "name": "Actuator4",
-      "type": "ACTUATOR",
-      "actuatorType": "MOTOR"
-    },
-    {
-      "name": "Actuator3",
-      "type": "ACTUATOR",
-      "actuatorType": "MOTOR"
-    },
-    {
-      "name": "Actuator2",
-      "type": "ACTUATOR",
-      "actuatorType": "MOTOR"
-    },
-    {
-      "name": "Actuator8",
-      "type": "ACTUATOR",
-      "actuatorType": "MOTOR"
-    },
-    {
-      "name": "Actuator7",
-      "type": "ACTUATOR",
-      "actuatorType": "MOTOR"
-    },
-    {
-      "name": "Actuator6",
-      "type": "ACTUATOR",
-      "actuatorType": "MOTOR"
-    },
-
-    {
-      "name": "Actuator1",
-      "type": "ACTUATOR",
-      "actuatorType": "MOTOR"
-    },
-
-    {
-      "mean": 10.0,
-      "sensorType": "TEMP",
+      "sensorType": "EEG",
       "name": "sensor-1",
       "type": "SENSOR",
       "distribution": 1,
@@ -200,7 +198,7 @@
     },
     {
       "mean": 10.0,
-      "sensorType": "TEMP",
+      "sensorType": "EEG",
       "name": "sensor-5",
       "type": "SENSOR",
       "distribution": 1,
@@ -208,7 +206,7 @@
     },
     {
       "mean": 10.0,
-      "sensorType": "TEMP",
+      "sensorType": "EEG",
       "name": "sensor-6",
       "type": "SENSOR",
       "distribution": 1,
@@ -216,7 +214,7 @@
     },
     {
       "mean": 10.0,
-      "sensorType": "TEMP",
+      "sensorType": "EEG",
       "name": "sensor-3",
       "type": "SENSOR",
       "distribution": 1,
@@ -224,7 +222,7 @@
     },
     {
       "mean": 10.0,
-      "sensorType": "TEMP",
+      "sensorType": "EEG",
       "name": "sensor-4",
       "type": "SENSOR",
       "distribution": 1,
@@ -232,7 +230,7 @@
     },
     {
       "mean": 10.0,
-      "sensorType": "TEMP",
+      "sensorType": "EEG",
       "name": "sensor-7",
       "type": "SENSOR",
       "distribution": 1,
@@ -240,7 +238,7 @@
     },
     {
       "mean": 10.0,
-      "sensorType": "TEMP",
+      "sensorType": "EEG",
       "name": "sensor-8",
       "type": "SENSOR",
       "distribution": 1,
