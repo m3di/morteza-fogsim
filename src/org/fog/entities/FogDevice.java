@@ -247,84 +247,39 @@ public class FogDevice extends PowerDatacenter {
 
     @Override
     protected void processOtherEvent(SimEvent ev) {
-        boolean logEvents = false;
         switch (ev.getTag()) {
             case FogEvents.TUPLE_ARRIVAL:
-                if(logEvents)
-                    System.out.println("TUPLE_ARRIVAL");
-
                 processTupleArrival(ev);
-
                 break;
             case FogEvents.LAUNCH_MODULE:
-                if(logEvents)
-                    System.out.println("LAUNCH_MODULE");
-
                 processModuleArrival(ev);
-
                 break;
             case FogEvents.RELEASE_OPERATOR:
-                if(logEvents)
-                    System.out.println("RELEASE_OPERATOR");
-
                 processOperatorRelease(ev);
-
                 break;
             case FogEvents.SENSOR_JOINED:
-                if(logEvents)
-                    System.out.println("SENSOR_JOINED");
-
                 processSensorJoining(ev);
-
                 break;
             case FogEvents.SEND_PERIODIC_TUPLE:
-                if(logEvents)
-                    System.out.println("SEND_PERIODIC_TUPLE");
-
                 sendPeriodicTuple(ev);
-
                 break;
             case FogEvents.APP_SUBMIT:
-                if(logEvents)
-                    System.out.println("APP_SUBMIT");
-
                 processAppSubmit(ev);
-
                 break;
             case FogEvents.UPDATE_NORTH_TUPLE_QUEUE:
-                if(logEvents)
-                    System.out.println("UPDATE_NORTH_TUPLE_QUEUE");
-
                 updateNorthTupleQueue();
-
                 break;
             case FogEvents.UPDATE_SOUTH_TUPLE_QUEUE:
-                if(logEvents)
-                    System.out.println("UPDATE_SOUTH_TUPLE_QUEUE");
-
                 updateSouthTupleQueue();
-
                 break;
             case FogEvents.ACTIVE_APP_UPDATE:
-                if(logEvents)
-                    System.out.println("ACTIVE_APP_UPDATE");
-
                 updateActiveApplications(ev);
-
                 break;
             case FogEvents.ACTUATOR_JOINED:
-                if(logEvents)
-                    System.out.println("ACTUATOR_JOINED");
-
                 processActuatorJoined(ev);
-
                 break;
             case FogEvents.LAUNCH_MODULE_INSTANCE:
-                if(logEvents)
-                    System.out.println("LAUNCH_MODULE_INSTANCE");
-
                 updateModuleInstanceCount(ev);
-
                 break;
             case FogEvents.RESOURCE_MGMT:
                 manageResources(ev);
@@ -738,11 +693,14 @@ public class FogDevice extends PowerDatacenter {
                 if (tuple.getDirection() == Tuple.UP)
                     sendUp(tuple);
                 else if (tuple.getDirection() == Tuple.DOWN) {
-
                     if (getLevel() != 2 || tuple.getPartyEntryDevice() == getId()) {
                         for (int childId : getChildrenIds())
                             sendDown(tuple, childId);
                     } else {
+                        if (!tuple.getNeighboursPassed().contains(getId())) {
+                            tuple.getNeighboursPassed().add(getId());
+                        }
+
                         for (Integer neibourId : getNeighboursLatencyMap().keySet()) {
                             if (!tuple.getNeighboursPassed().contains(neibourId)) {
                                 tuple.getNeighboursPassed().add(neibourId);
@@ -755,16 +713,24 @@ public class FogDevice extends PowerDatacenter {
                 sendUp(tuple);
             }
         } else {
-            System.out.println("OPS call Mehdi to check this!");
-            System.exit(0);
             if (tuple.getDirection() == Tuple.UP)
                 sendUp(tuple);
             else if (tuple.getDirection() == Tuple.DOWN) {
-                for (int childId : getChildrenIds())
-                    sendDown(tuple, childId);
+                if (getLevel() != 2 || tuple.getPartyEntryDevice() == getId()) {
+                    for (int childId : getChildrenIds())
+                        sendDown(tuple, childId);
+                } else {
+                    if (!tuple.getNeighboursPassed().contains(getId())) {
+                        tuple.getNeighboursPassed().add(getId());
+                    }
 
-                for (Integer neibourId : getNeighboursLatencyMap().keySet())
-                    sendDown(tuple, neibourId);
+                    for (Integer neibourId : getNeighboursLatencyMap().keySet()) {
+                        if (!tuple.getNeighboursPassed().contains(neibourId)) {
+                            tuple.getNeighboursPassed().add(neibourId);
+                            sendDown(tuple, neibourId);
+                        }
+                    }
+                }
             }
         }
     }
@@ -871,7 +837,7 @@ public class FogDevice extends PowerDatacenter {
 
     protected void sendUpFreeLink(Tuple tuple) {
         if (getNeighboursLatencyMap().size() > 0) {
-            if(tuple.getPartyEntryDevice() == null) {
+            if (tuple.getPartyEntryDevice() == null) {
                 tuple.setPartyEntryDevice(getId());
             }
 
