@@ -48,7 +48,7 @@ public class CleanFromJson_2 {
             /*
              * Creating the physical topology from specified JSON file
              */
-            PhysicalTopology physicalTopology = JsonToTopology.getPhysicalTopology(broker.getId(), appId, "topologies/morteza-1.json");
+            PhysicalTopology physicalTopology = JsonToTopology.getPhysicalTopology(broker.getId(), appId, "topologies/4 fog 1 zone.json");
 
             Controller controller = new Controller(
                     "master-controller",
