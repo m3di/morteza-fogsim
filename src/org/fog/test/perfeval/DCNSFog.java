@@ -44,8 +44,8 @@ public class DCNSFog {
 	static List<FogDevice> fogDevices = new ArrayList<FogDevice>();
 	static List<Sensor> sensors = new ArrayList<Sensor>();
 	static List<Actuator> actuators = new ArrayList<Actuator>();
-	static int numOfAreas = 1;
-	static int numOfCamerasPerArea = 4;
+	static int numOfAreas = 4;
+	static int numOfCamerasPerArea = 2;
 	
 	private static boolean CLOUD = false;
 	
@@ -69,7 +69,14 @@ public class DCNSFog {
 			application.setUserId(broker.getId());
 			
 			createFogDevices(broker.getId(), appId);
-			
+
+			fogDevices.get(2).setNeighboursLatency(fogDevices.get(5).getId(), 1.0);
+			fogDevices.get(5).setNeighboursLatency(fogDevices.get(2).getId(), 1.0);
+
+			fogDevices.get(8).setNeighboursLatency(fogDevices.get(11).getId(), 1.0);
+			fogDevices.get(11).setNeighboursLatency(fogDevices.get(8).getId(), 1.0);
+
+
 			Controller controller = null;
 			
 			ModuleMapping moduleMapping = ModuleMapping.createModuleMapping(); // initializing a module mapping

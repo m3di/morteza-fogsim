@@ -468,7 +468,7 @@
       "name": "Actuator16",
       "type": "ACTUATOR",
       "actuatorType": "MOTOR"
-    },
+    }
 
 
   ],

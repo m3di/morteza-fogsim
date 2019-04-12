@@ -47,10 +47,10 @@ public class VRGameFog {
     static List<Sensor> sensors = new ArrayList<Sensor>();
     static List<Actuator> actuators = new ArrayList<Actuator>();
 
-    static boolean CLOUD = true;
+    static boolean CLOUD = false;
 
     static int numOfDepts = 4;
-    static int numOfMobilesPerDept = 6;
+    static int numOfMobilesPerDept = 2;
     static double EEG_TRANSMISSION_TIME = 5.1;
     //static double EEG_TRANSMISSION_TIME = 10;
 
@@ -74,6 +74,12 @@ public class VRGameFog {
             application.setUserId(broker.getId());
 
             createFogDevices(broker.getId(), appId);
+
+            fogDevices.get(2).setNeighboursLatency(fogDevices.get(5).getId(), 0.10);
+            fogDevices.get(5).setNeighboursLatency(fogDevices.get(2).getId(), 0.10);
+
+            fogDevices.get(8).setNeighboursLatency(fogDevices.get(11).getId(), 0.10);
+            fogDevices.get(11).setNeighboursLatency(fogDevices.get(8).getId(), 0.10);
 
             ModuleMapping moduleMapping = ModuleMapping.createModuleMapping(); // initializing a module mapping
 
